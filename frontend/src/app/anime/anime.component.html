@@ -1,0 +1,27 @@
+<div class="anime-grid">
+  <mat-card
+    *ngFor="let anime of displayedAnime"
+    class="anime-card"
+    (click)="onTileClick(anime)"
+  >
+    <img
+      mat-card-image
+      [src]="anime.image_url"
+      alt="Anime cover"
+      class="anime-image"
+    />
+    <mat-card-content>
+      <h3>{{ anime.Title }}</h3>
+      <p>Score: {{ anime.Score }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<mat-paginator
+  [length]="animeList.length"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="[20]"
+  (page)="onPageChange($event)"
+  aria-label="Select page"
+>
+</mat-paginator>

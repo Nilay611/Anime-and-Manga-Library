@@ -1,0 +1,80 @@
+.anime-detail-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.header-section {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.left-section {
+  flex: 0 0 225px;
+}
+
+.right-section {
+  flex: 1;
+}
+
+.anime-cover {
+  width: 225px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.anime-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.stats-container {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.score-box {
+  background: #f8f8f8;
+  padding: 15px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.score {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2e51a2;
+}
+
+.score-users {
+  font-size: 12px;
+  color: #666;
+}
+
+.stats-info {
+  font-size: 14px;
+  color: #666;
+}
+
+.stats-info > div {
+  margin-bottom: 8px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.episode-select {
+  padding: 8px 16px;
+  background: #f8f8f8;
+  border-radius: 4px;
+  font-size: 14px;
+}

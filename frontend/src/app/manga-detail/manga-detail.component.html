@@ -1,0 +1,28 @@
+<div class="manga-detail-container" *ngIf="manga">
+  <div class="header-section">
+    <div class="left-section">
+      <img [src]="manga.image_url" [alt]="manga.Title" class="manga-cover" />
+    </div>
+    <div class="right-section">
+      <h1 class="manga-title">{{ manga.Title }}</h1>
+
+      <div class="stats-container">
+        <div class="score-box">
+          <div class="score">{{ manga.Score }}</div>
+        </div>
+
+        <div class="stats-info">
+          <div class="rank">Ranked #{{ manga.Rank }}</div>
+          <div class="popularity">Published: {{ manga.Published }}</div>
+          <div class="members">Members: {{ manga.Members }}</div>
+        </div>
+      </div>
+
+      <div class="action-buttons">
+        <button mat-raised-button color="primary" (click)="addToList()">
+          <mat-icon>add</mat-icon> Add to My List
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

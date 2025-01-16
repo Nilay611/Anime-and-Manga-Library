@@ -1,0 +1,27 @@
+<div class="manga-grid">
+  <mat-card
+    *ngFor="let manga of displayedManga"
+    class="manga-card"
+    (click)="onTileClick(manga)"
+  >
+    <img
+      mat-card-image
+      [src]="manga.image_url"
+      alt="Manga cover"
+      class="manga-image"
+    />
+    <mat-card-content>
+      <h3>{{ manga.Title }}</h3>
+      <p>Score: {{ manga.Score }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<mat-paginator
+  [length]="mangaList.length"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="[20]"
+  (page)="onPageChange($event)"
+  aria-label="Select page"
+>
+</mat-paginator>

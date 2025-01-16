@@ -1,0 +1,28 @@
+<div class="anime-detail-container" *ngIf="anime">
+  <div class="header-section">
+    <div class="left-section">
+      <img [src]="anime.image_url" [alt]="anime.Title" class="anime-cover" />
+    </div>
+    <div class="right-section">
+      <h1 class="anime-title">{{ anime.Title }}</h1>
+
+      <div class="stats-container">
+        <div class="score-box">
+          <div class="score">{{ anime.Score }}</div>
+        </div>
+
+        <div class="stats-info">
+          <div class="rank">Ranked #{{ anime.Rank }}</div>
+          <div class="popularity">Aired: {{ anime.Aired }}</div>
+          <div class="members">Members: {{ anime.Members }}</div>
+        </div>
+      </div>
+
+      <div class="action-buttons">
+        <button mat-raised-button color="primary" (click)="addToList()">
+          <mat-icon>add</mat-icon> Add to My List
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
