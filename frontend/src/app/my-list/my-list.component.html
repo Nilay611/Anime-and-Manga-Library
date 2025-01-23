@@ -1,0 +1,49 @@
+<div class="my-list-container">
+  <h1>My List</h1>
+
+  <mat-tab-group>
+    <mat-tab label="Anime">
+      <div class="grid-container">
+        <mat-card
+          *ngFor="let item of savedAnime"
+          class="item-card"
+          (click)="onAnimeClick(item)"
+        >
+          <img
+            mat-card-image
+            [src]="item.image_url"
+            [alt]="item.Title"
+            class="item-image"
+          />
+          <mat-card-content>
+            <h3>{{ item.Title }}</h3>
+            <p>Status: {{ item.status }}</p>
+            <p>Score: {{ item.Score }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Manga">
+      <div class="grid-container">
+        <mat-card
+          *ngFor="let item of savedManga"
+          class="item-card"
+          (click)="onMangaClick(item)"
+        >
+          <img
+            mat-card-image
+            [src]="item.image_url"
+            [alt]="item.Title"
+            class="item-image"
+          />
+          <mat-card-content>
+            <h3>{{ item.Title }}</h3>
+            <p>Status: {{ item.status }}</p>
+            <p>Score: {{ item.Score }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

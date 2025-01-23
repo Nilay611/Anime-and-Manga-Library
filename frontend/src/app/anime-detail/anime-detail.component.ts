@@ -3,7 +3,9 @@ import { Router } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { NgIf, NgForOf } from '@angular/common';
+import axios from 'axios';
 
 @Component({
   selector: 'app-anime-detail',
@@ -15,7 +17,7 @@ import { NgIf, NgForOf } from '@angular/common';
 export class AnimeDetailComponent implements OnInit {
   anime: any;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private snackBar: MatSnackBar) {
     const navigation = this.router.getCurrentNavigation();
     this.anime = navigation?.extras.state?.['anime'];
   }
@@ -27,6 +29,23 @@ export class AnimeDetailComponent implements OnInit {
   }
 
   addToList() {
-    console.log('Add to list clicked');
+    axios
+      .post('http://localhost:5000/api/anime/save', {
+        anime_id: this.anime.id,
+      })
+      .then((response) => {
+        this.snackBar.open('Added to your list!', 'Close', {
+          duration: 3000,
+        });
+      })
+      .catch((error) => {
+        this.snackBar.open(
+          error.response?.data?.message || 'Error adding to list',
+          'Close',
+          {
+            duration: 3000,
+          }
+        );
+      });
   }
 }

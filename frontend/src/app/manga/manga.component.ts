@@ -30,7 +30,7 @@ export class MangaComponent implements OnInit {
 
   loadMangaData() {
     axios
-      .get('manga-response.json')
+      .get('http://localhost:5000/api/manga')
       .then((response) => {
         this.mangaList = response.data.sort(
           (a: any, b: any) => b.Score - a.Score

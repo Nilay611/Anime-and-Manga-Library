@@ -30,7 +30,7 @@ export class AnimeComponent implements OnInit {
 
   loadAnimeData() {
     axios
-      .get('anime-response.json')
+      .get('http://localhost:5000/api/anime')
       .then((response) => {
         this.animeList = response.data.sort(
           (a: any, b: any) => b.Score - a.Score
